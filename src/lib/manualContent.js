@@ -1,0 +1,853 @@
+// Conteúdo multilíngue dos manuais. Cada idioma contém capa, rótulos e seções.
+// O conteúdo reflete a versão atual do JW Maps Visit:
+// - Idioma do circuito (definido pelo Superintendente)
+// - Proporção definida manualmente por circuito (não fixa, não por cidade)
+// - Cadastro herda o idioma do circuito automaticamente
+// - Nível do idioma pertence à pessoa
+// - Idioma da interface é preferência individual do usuário
+
+export const MANUAL_CONTENT = {
+  pt: {
+    app_name: "JW Maps Visit",
+    cover: {
+      publisher_title: "JW Maps Visit — Manual do Publicador",
+      publisher_subtitle: "Guia para Publicadores e Ajudantes",
+      admin_title: "JW Maps Visit — Manual Completo",
+      admin_subtitle: "Guia para Anciãos e Administradores",
+    },
+    toc: "Conteúdo",
+    generated_on: "Gerado em",
+    sections: {
+      basic: [
+        {
+          route: "/",
+          title: "Início",
+          description: "Tela principal com o resumo do seu território e atalhos rápidos.",
+          steps: [
+            "Veja o total de endereços, pessoas cadastradas e o progresso do território.",
+            "Use os botões de acesso rápido para ir a Endereços, Novo Endereço, Mapa e Cartões.",
+            "Confira os endereços adicionados recentemente na lista inferior.",
+            "O mini-mapa mostra a distribuição dos endereços cadastrados.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "Meus Territórios",
+          description: "Os endereços atribuídos a você e os compartilhados com você.",
+          steps: [
+            "Veja apenas os endereços do seu território e os compartilhados com você.",
+            "Use a busca para localizar uma pessoa pelo nome ou endereço.",
+            "Toque em um endereço para ver detalhes, registrar visita ou editar.",
+            "Compartilhe cartões com outros publicadores quando necessário.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "Novo Endereço",
+          description: "Cadastro de uma nova pessoa no território.",
+          steps: [
+            "Preencha Nome, Gênero e os dados de endereço (Rua, Bairro, Cidade).",
+            "Use 'Localizar no mapa' para preencher Latitude/Longitude automaticamente.",
+            "O idioma é definido pelo circuito. O cadastro utiliza automaticamente o idioma configurado para o circuito.",
+            "Informe apenas o 'Nível do idioma' (Básico, Intermediário, Avançado, Fluente).",
+            "Toque em 'Salvar'. Sem internet, o cadastro fica salvo offline e sincroniza depois.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Mapa",
+          description: "Visualização geográfica de todos os endereços.",
+          delay: 5000,
+          steps: [
+            "Veja todos os endereços no mapa, com marcadores por gênero.",
+            "Use os filtros de status (Ativo, Inativo, etc.) para refinar a exibição.",
+            "Toque em um marcador para ver o nome e abrir no Google Maps.",
+            "Endereços sem coordenadas aparecem em uma lista abaixo do mapa.",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Configurações",
+          description: "Ajustes do seu perfil e preferências do app.",
+          steps: [
+            "Ajuste seu nome de publicador e congregação.",
+            "Defina a Cidade e Província padrão para acelerar novos cadastros.",
+            "O idioma da interface é uma preferência individual. Use o seletor no canto superior direito para alternar entre Português, English, Français e Español.",
+            "O idioma da interface determina também o idioma do manual baixado.",
+            "Baixe o Manual de Instrução disponível para você.",
+          ],
+        },
+      ],
+      full: [
+        {
+          route: "/",
+          title: "Início",
+          description: "Painel principal com estatísticas e atalhos.",
+          steps: [
+            "Acompanhe o progresso do território e a cobertura por cidade.",
+            "Use os atalhos rápidos para as principais funções.",
+            "Veja os endereços recentes e o mini-mapa do território.",
+            "O progresso é calculado com base na proporção definida para o circuito.",
+          ],
+        },
+        {
+          route: "/addresses",
+          title: "Endereços",
+          description: "Lista completa de endereços com busca, filtros e exportação.",
+          steps: [
+            "Veja todos os endereços da sua congregação (ou de todas, se administrador).",
+            "Use busca, filtros de status, gênero e congregação para encontrar pessoas.",
+            "Toque em um cartão para ver detalhes, editar, registrar visita ou compartilhar.",
+            "Exporte a lista em Excel usando o botão de exportação.",
+            "Use 'Finalizar Visita' para liberar um endereço compartilhado.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "Novo Endereço",
+          description: "Cadastro de uma nova pessoa, online ou offline.",
+          steps: [
+            "Preencha Nome, Gênero e endereço (Rua, Bairro, Cidade, Província).",
+            "Use 'Localizar no mapa' para preencher coordenadas automaticamente.",
+            "O idioma é definido pelo circuito. O cadastro utiliza automaticamente o idioma configurado para o circuito — não é necessário selecionar o idioma no formulário.",
+            "Registre apenas o 'Nível do idioma' (Básico, Intermediário, Avançado, Fluente).",
+            "Salve — sem internet o cadastro sincroniza automaticamente depois.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Mapa",
+          description: "Mapa interativo de todos os endereços.",
+          delay: 5000,
+          steps: [
+            "Visualize os endereços com marcadores por gênero.",
+            "Filtre por status para focar nos endereços ativos.",
+            "Toque em um marcador para ver detalhes e abrir no Google Maps.",
+            "Confira a lista de endereços sem coordenadas abaixo do mapa.",
+          ],
+        },
+        {
+          route: "/visit-cards",
+          title: "Cartões de Visita",
+          description: "Geração de cartões impressos com mapa e informações.",
+          steps: [
+            "Selecione os endereços para gerar cartões de visita impressos.",
+            "Cada cartão traz o mapa do endereço e as informações principais.",
+            "Use 'Imprimir' para gerar o PDF em layout A4 (3 cartões por página).",
+            "Compartilhe cartões individuais via WhatsApp ou código QR.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "Meus Territórios",
+          description: "Endereços atribuídos a você e compartilhados com você.",
+          steps: [
+            "Veja apenas os endereços do seu território e os compartilhados.",
+            "Use a busca para localizar pessoas pelo nome ou endereço.",
+            "Toque em um endereço para detalhes, visita ou edição.",
+          ],
+        },
+        {
+          route: "/progress",
+          title: "Progresso do Território",
+          description: "Acompanhamento da meta de cadastro por cidade e configuração do circuito.",
+          steps: [
+            "Cada circuito possui um único idioma de trabalho, definido pelo Superintendente de Circuito.",
+            "O Superintendente define manualmente a proporção para o circuito (ex: 2 para cada 1.000 habitantes).",
+            "Essa proporção vale para TODO o circuito. Não há proporção individual por cidade.",
+            "A população das cidades é utilizada para calcular as metas locais automaticamente.",
+            "Acompanhe cadastrados, faltantes e percentual por cidade.",
+            "Administradores podem ajustar a população e renomear cidades.",
+            "Use 'Imprimir Relatório' para gerar um relatório A4.",
+          ],
+        },
+        {
+          route: "/admin",
+          title: "Painel do Administrador",
+          description: "Gestão de usuários, perfis, congregações e contato.",
+          steps: [
+            "Convide usuários e defina congregação e perfil (Publicador, Ajudante, Ancião, Administrador).",
+            "Gerencie congregações (adicionar/remover).",
+            "Defina permissões por usuário (botão escudo).",
+            "Configure o contato do criador e leia as mensagens recebidas.",
+          ],
+        },
+        {
+          route: "/admin/backup",
+          title: "Backup e Restauração",
+          description: "Exportar, restaurar e importar endereços.",
+          steps: [
+            "Exporte todos os endereços e histórico de visitas em JSON.",
+            "Restaure dados a partir de um arquivo de backup.",
+            "Importe endereços em massa via JSON ou CSV.",
+          ],
+        },
+        {
+          route: "/admin/trash",
+          title: "Lixeira",
+          description: "Endereços excluídos com possibilidade de restauração.",
+          steps: [
+            "Veja os endereços excluídos.",
+            "Restaure um endereço para retorná-lo à lista ativa.",
+            "Exclua definitivamente quando necessário.",
+          ],
+        },
+        {
+          route: "/contact",
+          title: "Contato com o Criador",
+          description: "Envie dúvidas, sugestões ou pedidos de ajuda.",
+          steps: [
+            "Preencha Nome, E-mail, Assunto e Mensagem e toque em 'Enviar mensagem'.",
+            "Use os botões de WhatsApp e E-mail para contato direto (se configurado pelo admin).",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Configurações",
+          description: "Preferências do usuário e download do manual.",
+          steps: [
+            "Ajuste seu nome de publicador e congregação.",
+            "Defina Cidade e Província padrão.",
+            "O idioma da interface é uma preferência individual do usuário, separada do idioma do circuito.",
+            "Use o seletor no canto superior direito para alternar entre Português, English, Français e Español.",
+            "O idioma da interface determina também o idioma do manual baixado.",
+            "Baixe o Manual de Instrução disponível para você.",
+          ],
+        },
+      ],
+    },
+  },
+
+  en: {
+    app_name: "JW Maps Visit",
+    cover: {
+      publisher_title: "JW Maps Visit — Publisher Manual",
+      publisher_subtitle: "Guide for Publishers and Helpers",
+      admin_title: "JW Maps Visit — Complete Manual",
+      admin_subtitle: "Guide for Elders and Administrators",
+    },
+    toc: "Contents",
+    generated_on: "Generated on",
+    sections: {
+      basic: [
+        {
+          route: "/",
+          title: "Home",
+          description: "Main screen with your territory summary and quick shortcuts.",
+          steps: [
+            "See the total addresses, registered people and territory progress.",
+            "Use the quick access buttons to go to Addresses, New Address, Map and Cards.",
+            "Check recently added addresses in the bottom list.",
+            "The mini-map shows the distribution of registered addresses.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "My Territories",
+          description: "Addresses assigned to you and shared with you.",
+          steps: [
+            "See only your territory addresses and those shared with you.",
+            "Use search to find a person by name or address.",
+            "Tap an address to see details, register a visit or edit.",
+            "Share cards with other publishers when needed.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "New Address",
+          description: "Registering a new person in the territory.",
+          steps: [
+            "Fill in Name, Gender and address data (Street, Neighborhood, City).",
+            "Use 'Locate on map' to auto-fill Latitude/Longitude.",
+            "The language is set by the circuit. The registration automatically uses the language configured for the circuit.",
+            "Only enter the 'Language level' (Basic, Intermediate, Advanced, Fluent).",
+            "Tap 'Save'. Without internet, the record is saved offline and syncs later.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Map",
+          description: "Geographic view of all addresses.",
+          delay: 5000,
+          steps: [
+            "See all addresses on the map, with markers by gender.",
+            "Use status filters (Active, Inactive, etc.) to refine the display.",
+            "Tap a marker to see the name and open in Google Maps.",
+            "Addresses without coordinates appear in a list below the map.",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Settings",
+          description: "Adjust your profile and app preferences.",
+          steps: [
+            "Adjust your publisher name and congregation.",
+            "Set the default City and Province to speed up new registrations.",
+            "The interface language is an individual preference. Use the selector in the top right corner to switch between Português, English, Français and Español.",
+            "The interface language also determines the language of the downloaded manual.",
+            "Download the Instruction Manual available to you.",
+          ],
+        },
+      ],
+      full: [
+        {
+          route: "/",
+          title: "Home",
+          description: "Main dashboard with statistics and shortcuts.",
+          steps: [
+            "Track territory progress and coverage by city.",
+            "Use quick shortcuts to the main functions.",
+            "See recent addresses and the territory mini-map.",
+            "Progress is calculated based on the ratio set for the circuit.",
+          ],
+        },
+        {
+          route: "/addresses",
+          title: "Addresses",
+          description: "Full list of addresses with search, filters and export.",
+          steps: [
+            "See all addresses in your congregation (or all, if administrator).",
+            "Use search, status, gender and congregation filters to find people.",
+            "Tap a card to see details, edit, register a visit or share.",
+            "Export the list to Excel using the export button.",
+            "Use 'Finish Visit' to release a shared address.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "New Address",
+          description: "Registering a new person, online or offline.",
+          steps: [
+            "Fill in Name, Gender and address (Street, Neighborhood, City, Province).",
+            "Use 'Locate on map' to auto-fill coordinates.",
+            "The language is set by the circuit. The registration automatically uses the language configured for the circuit — no need to select a language in the form.",
+            "Only enter the 'Language level' (Basic, Intermediate, Advanced, Fluent).",
+            "Save — without internet the record syncs automatically later.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Map",
+          description: "Interactive map of all addresses.",
+          delay: 5000,
+          steps: [
+            "View addresses with markers by gender.",
+            "Filter by status to focus on active addresses.",
+            "Tap a marker to see details and open in Google Maps.",
+            "Check the list of addresses without coordinates below the map.",
+          ],
+        },
+        {
+          route: "/visit-cards",
+          title: "Visit Cards",
+          description: "Generating printed cards with map and information.",
+          steps: [
+            "Select addresses to generate printed visit cards.",
+            "Each card shows the address map and key information.",
+            "Use 'Print' to generate a PDF in A4 layout (3 cards per page).",
+            "Share individual cards via WhatsApp or QR code.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "My Territories",
+          description: "Addresses assigned to you and shared with you.",
+          steps: [
+            "See only your territory addresses and shared ones.",
+            "Use search to find people by name or address.",
+            "Tap an address for details, visit or edit.",
+          ],
+        },
+        {
+          route: "/progress",
+          title: "Territory Progress",
+          description: "Tracking registration goals by city and circuit configuration.",
+          steps: [
+            "Each circuit has a single working language, set by the Circuit Overseer.",
+            "The Circuit Overseer manually sets the ratio for the circuit (e.g. 2 per 1,000 inhabitants).",
+            "This ratio applies to the ENTIRE circuit. There is no per-city ratio.",
+            "City population is used to automatically calculate local goals.",
+            "Track registered, missing and percentage by city.",
+            "Administrators can adjust population and rename cities.",
+            "Use 'Print Report' to generate an A4 report.",
+          ],
+        },
+        {
+          route: "/admin",
+          title: "Administrator Panel",
+          description: "User management, profiles, congregations and contact.",
+          steps: [
+            "Invite users and set congregation and profile (Publisher, Helper, Elder, Administrator).",
+            "Manage congregations (add/remove).",
+            "Set per-user permissions (shield button).",
+            "Configure creator contact and read received messages.",
+          ],
+        },
+        {
+          route: "/admin/backup",
+          title: "Backup and Restore",
+          description: "Export, restore and import addresses.",
+          steps: [
+            "Export all addresses and visit history in JSON.",
+            "Restore data from a backup file.",
+            "Import addresses in bulk via JSON or CSV.",
+          ],
+        },
+        {
+          route: "/admin/trash",
+          title: "Trash",
+          description: "Deleted addresses with restore option.",
+          steps: [
+            "See deleted addresses.",
+            "Restore an address to return it to the active list.",
+            "Permanently delete when necessary.",
+          ],
+        },
+        {
+          route: "/contact",
+          title: "Contact the Creator",
+          description: "Send questions, suggestions or help requests.",
+          steps: [
+            "Fill in Name, Email, Subject and Message and tap 'Send message'.",
+            "Use WhatsApp and Email buttons for direct contact (if configured by admin).",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Settings",
+          description: "User preferences and manual download.",
+          steps: [
+            "Adjust your publisher name and congregation.",
+            "Set default City and Province.",
+            "The interface language is an individual user preference, separate from the circuit language.",
+            "Use the selector in the top right corner to switch between Português, English, Français and Español.",
+            "The interface language also determines the language of the downloaded manual.",
+            "Download the Instruction Manual available to you.",
+          ],
+        },
+      ],
+    },
+  },
+
+  fr: {
+    app_name: "JW Maps Visit",
+    cover: {
+      publisher_title: "JW Maps Visit — Manuel du Proclamateur",
+      publisher_subtitle: "Guide pour les Proclamateurs et Aides",
+      admin_title: "JW Maps Visit — Manuel Complet",
+      admin_subtitle: "Guide pour les Anciens et Administrateurs",
+    },
+    toc: "Sommaire",
+    generated_on: "Généré le",
+    sections: {
+      basic: [
+        {
+          route: "/",
+          title: "Accueil",
+          description: "Écran principal avec le résumé de votre territoire et des raccourcis.",
+          steps: [
+            "Voir le total d'adresses, de personnes enregistrées et la progression du territoire.",
+            "Utilisez les boutons d'accès rapide pour aller aux Adresses, Nouvelle Adresse, Carte et Cartes.",
+            "Consultez les adresses récemment ajoutées dans la liste inférieure.",
+            "La mini-carte montre la répartition des adresses enregistrées.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "Mes Territoires",
+          description: "Adresses qui vous sont attribuées et partagées avec vous.",
+          steps: [
+            "Voyez uniquement les adresses de votre territoire et celles partagées avec vous.",
+            "Utilisez la recherche pour trouver une personne par nom ou adresse.",
+            "Touchez une adresse pour voir les détails, enregistrer une visite ou modifier.",
+            "Partagez des cartes avec d'autres proclamateurs si nécessaire.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "Nouvelle Adresse",
+          description: "Enregistrement d'une nouvelle personne dans le territoire.",
+          steps: [
+            "Remplissez Nom, Genre et données d'adresse (Rue, Quartier, Ville).",
+            "Utilisez 'Localiser sur la carte' pour remplir Latitude/Longitude automatiquement.",
+            "La langue est définie par le circuit. L'enregistrement utilise automatiquement la langue configurée pour le circuit.",
+            "Saisissez uniquement le 'Niveau de langue' (Basique, Intermédiaire, Avancé, Courant).",
+            "Touchez 'Enregistrer'. Sans internet, l'enregistrement est sauvegardé hors ligne et synchronisé plus tard.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Carte",
+          description: "Vue géographique de toutes les adresses.",
+          delay: 5000,
+          steps: [
+            "Voyez toutes les adresses sur la carte, avec des marqueurs par genre.",
+            "Utilisez les filtres de statut (Actif, Inactif, etc.) pour affiner l'affichage.",
+            "Touchez un marqueur pour voir le nom et ouvrir dans Google Maps.",
+            "Les adresses sans coordonnées apparaissent dans une liste sous la carte.",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Paramètres",
+          description: "Ajustez votre profil et les préférences de l'application.",
+          steps: [
+            "Ajustez votre nom de proclamateur et votre assemblée.",
+            "Définissez la Ville et Province par défaut pour accélérer les nouveaux enregistrements.",
+            "La langue de l'interface est une préférence individuelle. Utilisez le sélecteur en haut à droite pour basculer entre Português, English, Français et Español.",
+            "La langue de l'interface détermine également la langue du manuel téléchargé.",
+            "Téléchargez le Manuel d'Instructions disponible pour vous.",
+          ],
+        },
+      ],
+      full: [
+        {
+          route: "/",
+          title: "Accueil",
+          description: "Tableau de bord principal avec statistiques et raccourcis.",
+          steps: [
+            "Suivez la progression du territoire et la couverture par ville.",
+            "Utilisez les raccourcis pour les fonctions principales.",
+            "Voyez les adresses récentes et la mini-carte du territoire.",
+            "La progression est calculée selon le ratio défini pour le circuit.",
+          ],
+        },
+        {
+          route: "/addresses",
+          title: "Adresses",
+          description: "Liste complète des adresses avec recherche, filtres et exportation.",
+          steps: [
+            "Voyez toutes les adresses de votre assemblée (ou de toutes, si administrateur).",
+            "Utilisez recherche, filtres de statut, genre et assemblée pour trouver des personnes.",
+            "Touchez une carte pour voir les détails, modifier, enregistrer une visite ou partager.",
+            "Exportez la liste vers Excel avec le bouton d'exportation.",
+            "Utilisez 'Terminer la visite' pour libérer une adresse partagée.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "Nouvelle Adresse",
+          description: "Enregistrement d'une nouvelle personne, en ligne ou hors ligne.",
+          steps: [
+            "Remplissez Nom, Genre et adresse (Rue, Quartier, Ville, Province).",
+            "Utilisez 'Localiser sur la carte' pour remplir les coordonnées automatiquement.",
+            "La langue est définie par le circuit. L'enregistrement utilise automatiquement la langue configurée pour le circuit — pas besoin de sélectionner une langue dans le formulaire.",
+            "Saisissez uniquement le 'Niveau de langue' (Basique, Intermédiaire, Avancé, Courant).",
+            "Enregistrez — sans internet l'enregistrement se synchronise automatiquement plus tard.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Carte",
+          description: "Carte interactive de toutes les adresses.",
+          delay: 5000,
+          steps: [
+            "Visualisez les adresses avec des marqueurs par genre.",
+            "Filtrez par statut pour vous concentrer sur les adresses actives.",
+            "Touchez un marqueur pour voir les détails et ouvrir dans Google Maps.",
+            "Consultez la liste des adresses sans coordonnées sous la carte.",
+          ],
+        },
+        {
+          route: "/visit-cards",
+          title: "Cartes de Visite",
+          description: "Génération de cartes imprimées avec carte et informations.",
+          steps: [
+            "Sélectionnez les adresses pour générer des cartes de visite imprimées.",
+            "Chaque carte montre la carte de l'adresse et les informations principales.",
+            "Utilisez 'Imprimer' pour générer un PDF en format A4 (3 cartes par page).",
+            "Partagez des cartes individuelles via WhatsApp ou code QR.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "Mes Territoires",
+          description: "Adresses qui vous sont attribuées et partagées avec vous.",
+          steps: [
+            "Voyez uniquement les adresses de votre territoire et celles partagées.",
+            "Utilisez la recherche pour trouver des personnes par nom ou adresse.",
+            "Touchez une adresse pour les détails, visite ou modification.",
+          ],
+        },
+        {
+          route: "/progress",
+          title: "Progression du Territoire",
+          description: "Suivi des objectifs d'enregistrement par ville et configuration du circuit.",
+          steps: [
+            "Chaque circuit a une seule langue de travail, définie par le Surveillant de Circuit.",
+            "Le Surveillant de Circuit définit manuellement le ratio pour le circuit (ex: 2 pour 1 000 habitants).",
+            "Ce ratio s'applique à TOUT le circuit. Il n'y a pas de ratio individuel par ville.",
+            "La population des villes est utilisée pour calculer automatiquement les objectifs locaux.",
+            "Suivez les enregistrés, manquants et pourcentages par ville.",
+            "Les administrateurs peuvent ajuster la population et renommer les villes.",
+            "Utilisez 'Imprimer le rapport' pour générer un rapport A4.",
+          ],
+        },
+        {
+          route: "/admin",
+          title: "Panneau d'Administration",
+          description: "Gestion des utilisateurs, profils, assemblées et contact.",
+          steps: [
+            "Invitez des utilisateurs et définissez l'assemblée et le profil (Proclamateur, Aide, Ancien, Administrateur).",
+            "Gérez les assemblées (ajouter/supprimer).",
+            "Définissez les permissions par utilisateur (bouton bouclier).",
+            "Configurez le contact du créateur et lisez les messages reçus.",
+          ],
+        },
+        {
+          route: "/admin/backup",
+          title: "Sauvegarde et Restauration",
+          description: "Exporter, restaurer et importer des adresses.",
+          steps: [
+            "Exportez toutes les adresses et l'historique des visites en JSON.",
+            "Restaurez les données à partir d'un fichier de sauvegarde.",
+            "Importez des adresses en masse via JSON ou CSV.",
+          ],
+        },
+        {
+          route: "/admin/trash",
+          title: "Corbeille",
+          description: "Adresses supprimées avec possibilité de restauration.",
+          steps: [
+            "Voyez les adresses supprimées.",
+            "Restaurez une adresse pour la remettre dans la liste active.",
+            "Supprimez définitivement si nécessaire.",
+          ],
+        },
+        {
+          route: "/contact",
+          title: "Contacter le Créateur",
+          description: "Envoyez des questions, suggestions ou demandes d'aide.",
+          steps: [
+            "Remplissez Nom, E-mail, Sujet et Message et touchez 'Envoyer le message'.",
+            "Utilisez les boutons WhatsApp et E-mail pour un contact direct (si configuré par l'admin).",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Paramètres",
+          description: "Préférences utilisateur et téléchargement du manuel.",
+          steps: [
+            "Ajustez votre nom de proclamateur et votre assemblée.",
+            "Définissez la Ville et Province par défaut.",
+            "La langue de l'interface est une préférence individuelle de l'utilisateur, distincte de la langue du circuit.",
+            "Utilisez le sélecteur en haut à droite pour basculer entre Português, English, Français et Español.",
+            "La langue de l'interface détermine également la langue du manuel téléchargé.",
+            "Téléchargez le Manuel d'Instructions disponible pour vous.",
+          ],
+        },
+      ],
+    },
+  },
+
+  es: {
+    app_name: "JW Maps Visit",
+    cover: {
+      publisher_title: "JW Maps Visit — Manual del Publicador",
+      publisher_subtitle: "Guía para Publicadores y Ayudantes",
+      admin_title: "JW Maps Visit — Manual Completo",
+      admin_subtitle: "Guía para Ancianos y Administradores",
+    },
+    toc: "Contenido",
+    generated_on: "Generado el",
+    sections: {
+      basic: [
+        {
+          route: "/",
+          title: "Inicio",
+          description: "Pantalla principal con el resumen de su territorio y accesos rápidos.",
+          steps: [
+            "Vea el total de direcciones, personas registradas y el progreso del territorio.",
+            "Use los botones de acceso rápido para ir a Direcciones, Nueva Dirección, Mapa y Tarjetas.",
+            "Consulte las direcciones añadidas recientemente en la lista inferior.",
+            "El mini-mapa muestra la distribución de las direcciones registradas.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "Mis Territorios",
+          description: "Direcciones asignadas a usted y compartidas con usted.",
+          steps: [
+            "Vea solo las direcciones de su territorio y las compartidas con usted.",
+            "Use la búsqueda para encontrar una persona por nombre o dirección.",
+            "Toque una dirección para ver detalles, registrar una visita o editar.",
+            "Comparta tarjetas con otros publicadores cuando sea necesario.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "Nueva Dirección",
+          description: "Registro de una nueva persona en el territorio.",
+          steps: [
+            "Complete Nombre, Género y los datos de dirección (Calle, Barrio, Ciudad).",
+            "Use 'Ubicar en el mapa' para completar Latitud/Longitud automáticamente.",
+            "El idioma lo define el circuito. El registro utiliza automáticamente el idioma configurado para el circuito.",
+            "Ingrese solo el 'Nivel del idioma' (Básico, Intermedio, Avanzado, Fluido).",
+            "Toque 'Guardar'. Sin internet, el registro se guarda sin conexión y se sincroniza después.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Mapa",
+          description: "Vista geográfica de todas las direcciones.",
+          delay: 5000,
+          steps: [
+            "Vea todas las direcciones en el mapa, con marcadores por género.",
+            "Use los filtros de estado (Activo, Inactivo, etc.) para refinar la vista.",
+            "Toque un marcador para ver el nombre y abrir en Google Maps.",
+            "Las direcciones sin coordenadas aparecen en una lista debajo del mapa.",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Configuración",
+          description: "Ajuste su perfil y preferencias de la aplicación.",
+          steps: [
+            "Ajuste su nombre de publicador y congregación.",
+            "Defina la Ciudad y Provincia predeterminadas para acelerar nuevos registros.",
+            "El idioma de la interfaz es una preferencia individual. Use el selector en la esquina superior derecha para alternar entre Português, English, Français y Español.",
+            "El idioma de la interfaz determina también el idioma del manual descargado.",
+            "Descargue el Manual de Instrucciones disponible para usted.",
+          ],
+        },
+      ],
+      full: [
+        {
+          route: "/",
+          title: "Inicio",
+          description: "Panel principal con estadísticas y accesos rápidos.",
+          steps: [
+            "Siga el progreso del territorio y la cobertura por ciudad.",
+            "Use los accesos rápidos para las funciones principales.",
+            "Vea las direcciones recientes y el mini-mapa del territorio.",
+            "El progreso se calcula según la proporción definida para el circuito.",
+          ],
+        },
+        {
+          route: "/addresses",
+          title: "Direcciones",
+          description: "Lista completa de direcciones con búsqueda, filtros y exportación.",
+          steps: [
+            "Vea todas las direcciones de su congregación (o de todas, si es administrador).",
+            "Use búsqueda, filtros de estado, género y congregación para encontrar personas.",
+            "Toque una tarjeta para ver detalles, editar, registrar una visita o compartir.",
+            "Exporte la lista a Excel usando el botón de exportación.",
+            "Use 'Finalizar Visita' para liberar una dirección compartida.",
+          ],
+        },
+        {
+          route: "/addresses/new",
+          title: "Nueva Dirección",
+          description: "Registro de una nueva persona, en línea o sin conexión.",
+          steps: [
+            "Complete Nombre, Género y dirección (Calle, Barrio, Ciudad, Provincia).",
+            "Use 'Ubicar en el mapa' para completar coordenadas automáticamente.",
+            "El idioma lo define el circuito. El registro utiliza automáticamente el idioma configurado para el circuito — no es necesario seleccionar un idioma en el formulario.",
+            "Ingrese solo el 'Nivel del idioma' (Básico, Intermedio, Avanzado, Fluido).",
+            "Guarde — sin internet el registro se sincroniza automáticamente después.",
+          ],
+        },
+        {
+          route: "/map",
+          title: "Mapa",
+          description: "Mapa interactivo de todas las direcciones.",
+          delay: 5000,
+          steps: [
+            "Visualice las direcciones con marcadores por género.",
+            "Filtre por estado para centrarse en las direcciones activas.",
+            "Toque un marcador para ver detalles y abrir en Google Maps.",
+            "Consulte la lista de direcciones sin coordenadas debajo del mapa.",
+          ],
+        },
+        {
+          route: "/visit-cards",
+          title: "Tarjetas de Visita",
+          description: "Generación de tarjetas impresas con mapa e información.",
+          steps: [
+            "Seleccione las direcciones para generar tarjetas de visita impresas.",
+            "Cada tarjeta muestra el mapa de la dirección y la información principal.",
+            "Use 'Imprimir' para generar un PDF en formato A4 (3 tarjetas por página).",
+            "Comparta tarjetas individuales vía WhatsApp o código QR.",
+          ],
+        },
+        {
+          route: "/my-territories",
+          title: "Mis Territorios",
+          description: "Direcciones asignadas a usted y compartidas con usted.",
+          steps: [
+            "Vea solo las direcciones de su territorio y las compartidas.",
+            "Use la búsqueda para encontrar personas por nombre o dirección.",
+            "Toque una dirección para detalles, visita o edición.",
+          ],
+        },
+        {
+          route: "/progress",
+          title: "Progreso del Territorio",
+          description: "Seguimiento de metas de registro por ciudad y configuración del circuito.",
+          steps: [
+            "Cada circuito tiene un solo idioma de trabajo, definido por el Superintendente de Circuito.",
+            "El Superintendente de Circuito define manualmente la proporción para el circuito (ej: 2 por cada 1.000 habitantes).",
+            "Esta proporción se aplica a TODO el circuito. No hay proporción individual por ciudad.",
+            "La población de las ciudades se utiliza para calcular automáticamente las metas locales.",
+            "Siga los registrados, faltantes y porcentaje por ciudad.",
+            "Los administradores pueden ajustar la población y renombrar ciudades.",
+            "Use 'Imprimir Informe' para generar un informe A4.",
+          ],
+        },
+        {
+          route: "/admin",
+          title: "Panel del Administrador",
+          description: "Gestión de usuarios, perfiles, congregaciones y contacto.",
+          steps: [
+            "Invite usuarios y defina congregación y perfil (Publicador, Ayudante, Anciano, Administrador).",
+            "Gestione congregaciones (añadir/eliminar).",
+            "Defina permisos por usuario (botón escudo).",
+            "Configure el contacto del creador y lea los mensajes recibidos.",
+          ],
+        },
+        {
+          route: "/admin/backup",
+          title: "Copia de Seguridad y Restauración",
+          description: "Exportar, restaurar e importar direcciones.",
+          steps: [
+            "Exporte todas las direcciones y el historial de visitas en JSON.",
+            "Restaure datos desde un archivo de copia de seguridad.",
+            "Importe direcciones en masa vía JSON o CSV.",
+          ],
+        },
+        {
+          route: "/admin/trash",
+          title: "Papelera",
+          description: "Direcciones eliminadas con opción de restauración.",
+          steps: [
+            "Vea las direcciones eliminadas.",
+            "Restaure una dirección para devolverla a la lista activa.",
+            "Elimine definitivamente cuando sea necesario.",
+          ],
+        },
+        {
+          route: "/contact",
+          title: "Contactar al Creador",
+          description: "Envíe dudas, sugerencias o solicitudes de ayuda.",
+          steps: [
+            "Complete Nombre, Correo, Asunto y Mensaje y toque 'Enviar mensaje'.",
+            "Use los botones de WhatsApp y Correo para contacto directo (si lo configuró el admin).",
+          ],
+        },
+        {
+          route: "/settings",
+          title: "Configuración",
+          description: "Preferencias del usuario y descarga del manual.",
+          steps: [
+            "Ajuste su nombre de publicador y congregación.",
+            "Defina Ciudad y Provincia predeterminadas.",
+            "El idioma de la interfaz es una preferencia individual del usuario, separada del idioma del circuito.",
+            "Use el selector en la esquina superior derecha para alternar entre Português, English, Français y Español.",
+            "El idioma de la interfaz determina también el idioma del manual descargado.",
+            "Descargue el Manual de Instrucciones disponible para usted.",
+          ],
+        },
+      ],
+    },
+  },
+};
